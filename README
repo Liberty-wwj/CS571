@@ -1,1 +1,9 @@
-README is a new thing
+#README
+#Run your zipcode 
+docker build . -f DOCKERFILE -t getzipcodefromcity_v2
+docker run -d --name flask_web_weather -p 5010:5000 getzipcodefromcity_v2
+
+#Run your weather
+# vi DOCKERFILE, change the "COPY app.py ." to "COPY app.py1 ."
+docker build . -f DOCKERFILE -t getweather_v1
+docker run -d --name flask_web_weather -p 5010:5000 getweather_v1
